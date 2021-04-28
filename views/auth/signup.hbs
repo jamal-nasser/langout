@@ -1,0 +1,262 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
+
+    <div class="col-lg-6 col-md-6 form-container">
+      <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+        {{!-- <div class="logo mb-3">
+          <img src="/images/logo.png" width="150px">
+        </div> --}}
+        <div class="heading mb-4">
+          <h4>Create an account</h4>
+        </div>
+        <form action="/signup" method="POST" enctype="multipart/form-data">
+          <div class="form-input">
+            <span><i class="fa fa-user"></i></span>
+            <input type="text" placeholder="Full Name" name="fullName" required>
+          </div>
+          <div class="form-input">
+            <span><i class="fa fa-envelope"></i></span>
+            <input type="email" placeholder="Email Address" name="email" required>
+          </div>
+          <div class="form-input">
+            <span><i class="fa fa-lock"></i></span>
+            <input type="password" placeholder="Password" name="password" required>
+          </div>
+          <div class="form-input">
+            <span><i class="fa fa-lock"></i></span>
+            <input type="file" placeholder="Upload profile image" name="imageUrl" required>
+          </div>
+          <div class="row mb-3">
+          </div>
+        {{#if errorMessage}}
+        <div class="error-message">{{errorMessage}}</div>
+        {{/if}}
+          <div class="text-left mb-3">
+            <button type="submit" class="btn">Register</button>
+          </div>
+          <div class="text-center mb-2">
+            <div class="mb-3" style="color: #777">or register with</div>
+
+            <a href="/auth/facebook" class="btn btn-social btn-facebook">facebook</a>
+
+            <a href="/auth/google" class="btn btn-social btn-google">google</a>
+
+
+            <div style="color: #777">Already have an account
+              <a href="/login" class="login-link">Login here</a>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{{!-- 
+
+
+<h2>Signup</h2>
+
+<form action="/signup" method="POST" id="form-container" enctype="multipart/form-data">
+  <div>
+    <label for="fullName">Full name:</label>
+    <input type="text" name="fullName">
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" name="email">
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password">
+  </div>
+
+  <div>
+    <label for="upload">Upload profile Image</label>
+    <input type="file" name="imageUrl" id="upload">
+  </div>
+
+  <div>
+  <label for="languages">Choose spoken languages</label>
+
+  <select class="languages" name="spokenLanguages" data-placeholder="Choose a Language...">
+    <option value="Afrikaans">Afrikaans</option>
+    <option value="Albanian">Albanian</option>
+    <option value="Arabic">Arabic</option>
+    <option value="Armenian">Armenian</option>
+    <option value="Basque">Basque</option>
+    <option value="Bengali">Bengali</option>
+    <option value="Bulgarian">Bulgarian</option>
+    <option value="Catalan">Catalan</option>
+    <option value="Cambodian">Cambodian</option>
+    <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+    <option value="Croatian">Croatian</option>
+    <option value="Czech">Czech</option>
+    <option value="Danish">Danish</option>
+    <option value="Dutch">Dutch</option>
+    <option value="English">English</option>
+    <option value="Estonian">Estonian</option>
+    <option value="Fiji">Fiji</option>
+    <option value="Finnish">Finnish</option>
+    <option value="French">French</option>
+    <option value="Georgian">Georgian</option>
+    <option value="German">German</option>
+    <option value="Greek">Greek</option>
+    <option value="Gujarati">Gujarati</option>
+    <option value="Hebrew">Hebrew</option>
+    <option value="Hindi">Hindi</option>
+    <option value="Hungarian">Hungarian</option>
+    <option value="Icelandic">Icelandic</option>
+    <option value="Indonesian">Indonesian</option>
+    <option value="Irish">Irish</option>
+    <option value="Italian">Italian</option>
+    <option value="Japanese">Japanese</option>
+    <option value="Javanese">Javanese</option>
+    <option value="Korean">Korean</option>
+    <option value="Latin">Latin</option>
+    <option value="Latvian">Latvian</option>
+    <option value="Lithuanian">Lithuanian</option>
+    <option value="Macedonian">Macedonian</option>
+    <option value="Malay">Malay</option>
+    <option value="Malayalam">Malayalam</option>
+    <option value="Maltese">Maltese</option>
+    <option value="Maori">Maori</option>
+    <option value="Marathi">Marathi</option>
+    <option value="Mongolian">Mongolian</option>
+    <option value="Nepali">Nepali</option>
+    <option value="Norwegian">Norwegian</option>
+    <option value="Persian">Persian</option>
+    <option value="Polish">Polish</option>
+    <option value="Portuguese">Portuguese</option>
+    <option value="Punjabi">Punjabi</option>
+    <option value="Quechua">Quechua</option>
+    <option value="Romanian">Romanian</option>
+    <option value="Russian">Russian</option>
+    <option value="Samoan">Samoan</option>
+    <option value="Serbian">Serbian</option>
+    <option value="Slovak">Slovak</option>
+    <option value="Slovenian">Slovenian</option>
+    <option value="Spanish">Spanish</option>
+    <option value="Swahili">Swahili</option>
+    <option value="Swedish ">Swedish </option>
+    <option value="Tamil">Tamil</option>
+    <option value="Tatar">Tatar</option>
+    <option value="Telugu">Telugu</option>
+    <option value="Thai">Thai</option>
+    <option value="Tibetan">Tibetan</option>
+    <option value="Tonga">Tonga</option>
+    <option value="Turkish">Turkish</option>
+    <option value="Ukrainian">Ukrainian</option>
+    <option value="Urdu">Urdu</option>
+    <option value="Uzbek">Uzbek</option>
+    <option value="Vietnamese">Vietnamese</option>
+    <option value="Welsh">Welsh</option>
+    <option value="Xhosa">Xhosa</option>
+  </select>
+</div>
+
+<div>
+  <label for="languages">Choose languages to learn</label>
+
+  <select class="languages" name="learnLanguages" data-placeholder="Choose a Language...">
+    <option value="Afrikaans">Afrikaans</option>
+    <option value="Albanian">Albanian</option>
+    <option value="Arabic">Arabic</option>
+    <option value="Armenian">Armenian</option>
+    <option value="Basque">Basque</option>
+    <option value="Bengali">Bengali</option>
+    <option value="Bulgarian">Bulgarian</option>
+    <option value="Catalan">Catalan</option>
+    <option value="Cambodian">Cambodian</option>
+    <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+    <option value="Croatian">Croatian</option>
+    <option value="Czech">Czech</option>
+    <option value="Danish">Danish</option>
+    <option value="Dutch">Dutch</option>
+    <option value="English">English</option>
+    <option value="Estonian">Estonian</option>
+    <option value="Fiji">Fiji</option>
+    <option value="Finnish">Finnish</option>
+    <option value="French">French</option>
+    <option value="Georgian">Georgian</option>
+    <option value="German">German</option>
+    <option value="Greek">Greek</option>
+    <option value="Gujarati">Gujarati</option>
+    <option value="Hebrew">Hebrew</option>
+    <option value="Hindi">Hindi</option>
+    <option value="Hungarian">Hungarian</option>
+    <option value="Icelandic">Icelandic</option>
+    <option value="Indonesian">Indonesian</option>
+    <option value="Irish">Irish</option>
+    <option value="Italian">Italian</option>
+    <option value="Japanese">Japanese</option>
+    <option value="Javanese">Javanese</option>
+    <option value="Korean">Korean</option>
+    <option value="Latin">Latin</option>
+    <option value="Latvian">Latvian</option>
+    <option value="Lithuanian">Lithuanian</option>
+    <option value="Macedonian">Macedonian</option>
+    <option value="Malay">Malay</option>
+    <option value="Malayalam">Malayalam</option>
+    <option value="Maltese">Maltese</option>
+    <option value="Maori">Maori</option>
+    <option value="Marathi">Marathi</option>
+    <option value="Mongolian">Mongolian</option>
+    <option value="Nepali">Nepali</option>
+    <option value="Norwegian">Norwegian</option>
+    <option value="Persian">Persian</option>
+    <option value="Polish">Polish</option>
+    <option value="Portuguese">Portuguese</option>
+    <option value="Punjabi">Punjabi</option>
+    <option value="Quechua">Quechua</option>
+    <option value="Romanian">Romanian</option>
+    <option value="Russian">Russian</option>
+    <option value="Samoan">Samoan</option>
+    <option value="Serbian">Serbian</option>
+    <option value="Slovak">Slovak</option>
+    <option value="Slovenian">Slovenian</option>
+    <option value="Spanish">Spanish</option>
+    <option value="Swahili">Swahili</option>
+    <option value="Swedish ">Swedish </option>
+    <option value="Tamil">Tamil</option>
+    <option value="Tatar">Tatar</option>
+    <option value="Telugu">Telugu</option>
+    <option value="Thai">Thai</option>
+    <option value="Tibetan">Tibetan</option>
+    <option value="Tonga">Tonga</option>
+    <option value="Turkish">Turkish</option>
+    <option value="Ukrainian">Ukrainian</option>
+    <option value="Urdu">Urdu</option>
+    <option value="Uzbek">Uzbek</option>
+    <option value="Vietnamese">Vietnamese</option>
+    <option value="Welsh">Welsh</option>
+    <option value="Xhosa">Xhosa</option>
+  </select>
+</div>
+
+
+  {{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
+  {{/if}}
+
+  <div>
+    <button>Create account</button>
+  </div>
+
+  <div>
+    <a href="/auth/google">Sign up with google</a>
+  </div>
+  <div>
+    <a href="/auth/facebook">Sign up with facebook</a>
+  </div>
+
+  <p class="account-message">
+    Do you already have an account?
+    <a href="/login">Login</a>
+  </p>
+
+</form> --}}

@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
+
+    <div class="col-lg-6 col-md-6 form-container">
+      <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+        {{!-- <div class="logo mb-3">
+          <img src="/images/logo.png" width="150px">
+        </div> --}}
+        <div class="heading mb-4">
+          <h4>Login into your account</h4>
+        </div>
+        <form action="/login" method="POST">
+          <div class="form-input">
+            <span><i class="fa fa-envelope"></i></span>
+            <input type="email" placeholder="Email Address" name="email" required>
+          </div>
+          <div class="form-input">
+            <span><i class="fa fa-lock"></i></span>
+            <input type="password" placeholder="Password" name="password" required>
+          </div>
+          <div class="row mb-3">
+          </div>
+          {{#if message}}
+          <div class="error-message">
+            {{#each message}}
+            <p>{{this}}</p>
+            {{/each}}
+          </div>
+          {{/if}}
+          <div class="text-left mb-3">
+            <button type="submit" class="btn">Login</button>
+          </div>
+          <div class="text-center mb-2">
+            <div class="mb-3" style="color: #777">or login with</div>
+
+            <a href="/auth/facebook" class="btn btn-social btn-facebook">facebook</a>
+
+            <a href="/auth/google" class="btn btn-social btn-google">google</a>
+
+          </div>
+          <div style="color: #777">Don't have an account
+            <a href="/signup" class="register-link">Register here</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- <h2>Login</h2>
+<form action="/login" method="POST">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" name="email">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+  </div>
+
+  {{#if message}}
+  <div class="error-message">
+    {{#each message}}
+    <p>{{this}}</p>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  <div>
+    <button>Log in</button>
+  </div>
+ 
+  <div>
+    <a href="/auth/google">Login with google</a>
+  </div>
+  <div>
+    <a href="/auth/facebook">Login with facebook</a>
+  </div>
+
+  <p class="account-message">
+    Sign up?
+    <a href="/signup">Signup</a>
+  </p>
+
+</form> --}}

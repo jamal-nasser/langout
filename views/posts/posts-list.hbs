@@ -1,0 +1,57 @@
+<section class="all-posts-page">
+<h1>All Posts</h1>
+
+<div class="container">
+  <div class="row">
+    {{#each posts}}
+
+    <div class="col-4">
+      <img class="img-fluid" alt="Responsive image" class="post-image" src="{{imageUrl}}" alt="{{title}} - image">
+
+      <div class="card-info">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <a href="/posts/{{id}}">See details</a>
+        <br>
+        {{#if isOwner}}
+        <a href="/posts/{{id}}/edit">Edit post</a>
+        <form action="/posts/{{id}}/delete" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+        {{/if}}
+      </div>
+
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+{{!-- <hr>
+  {{#each posts}}
+   
+    <h3>{{title}}</h5>
+    <p>{{description}}</p>
+
+    <figure>
+      <img src="{{imageUrl}}" alt="post-image">
+    </figure>
+
+
+    <a href="/posts/{{id}}">See details</a>
+    
+        {{#if isOwner}}
+        <a href="/posts/{{id}}/edit">Edit post</a>
+          <form action="/posts/{{id}}/delete" method="POST">
+             <button type="submit">Delete</button>
+          </form>
+          {{/if}}
+        
+  {{/each}}
+
+  <hr /> --}}
