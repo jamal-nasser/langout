@@ -1,10 +1,32 @@
-<section>
-  <h2>The Details of the post: {{postResult.title}}</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
+    <div class="col-lg-6 col-md-6 form-container">
+      <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+        <div class="profile">
+         
+          <img src="{{postResult.imageUrl}}" alt="post-image" class="profile-picture">
+          <div class="profile-card">
+            <h2>{{user.fullName}} wrote: {{postResult.title}}</h2>
+            <p>{{postResult.description}}</p>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{{!-- <section>
+  <h2>{{user.fullName}} wrote: {{postResult.title}}</h2>
   <p>{{postResult.description}}</p>
 <figure>
   <img src="{{postResult.imageUrl}}" alt="post-image">
 </figure>
-  <hr>
+</section> --}}
 
-  <a href="/posts/{{postResult.id}}/edit">Edit</a>
-</section>

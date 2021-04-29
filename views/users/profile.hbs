@@ -1,13 +1,19 @@
-
-<h2>Hoi!</h2>
-
-{{#if user}}
-<div>
-  <h3>Hello {{user.fullName}} </h3>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
+    <div class="col-lg-6 col-md-6 form-container">
+      <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+        <div class="profile">
+          {{#if user}}
+          <img src="{{user.imageUrl}}" alt="profile-picture" class="profile-picture">
+          <div class="profile-card">
+            <h3>Hello {{user.fullName}} </h3>
+            <p>I can teach {{user.speakingLanguage}} and I want to learn {{user.learningLanguage}} </p>
+           <a href="/users/{{user.id}}/edit" class="btn btn-social btn-google">Edit profile</a>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<figure>
-  <img src="{{user.imageUrl}}" alt="profile-image">
-</figure>
-{{/if}}
-
-

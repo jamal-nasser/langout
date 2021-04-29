@@ -21,10 +21,6 @@ router.post('/create-post',
     
     let imageUrl = "https://via.placeholder.com/150";
 
-    // Sometimes images aren't added with a room.
-    // To take that into consideration, we will first check if there is a req.file
-    // if the file is there, add the cloudinary url.
-    // Otherwise the default value above will be used for the image
     if (req.file) {
       const { path } = req.file;
       imageUrl = path;
@@ -69,13 +65,15 @@ router.post('/posts/:postId/edit',
   fileUploader.single("imageUrl"),
   (req, res) => {
   const { postId } = req.params;
-  const { title, description } = req.body;
+  const { title, existingImage, description } = req.body;
 
-    let imageUrl = "https://via.placeholder.com/150";
+    let imageUrl;
 
     if (req.file) {
       const { path } = req.file;
       imageUrl = path;
+    } else {
+      imageUrl = existingImage;
     }
 
   Post

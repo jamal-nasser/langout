@@ -10,7 +10,7 @@ module.exports = (app) => {
       resave: true,
       saveUninitialized: false,
       cookie: {
-        maxAge: 100000
+        maxAge: 10000000
       },
       store: MongoStore.create({
         mongoUrl: process.env.MONGO_URI,

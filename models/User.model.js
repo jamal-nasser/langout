@@ -16,6 +16,8 @@ const userSchema = new Schema(
       type: String,
       // required: [true, 'Password is required'],
     },
+    speakingLanguage: { type: String },
+    learningLanguage: { type: String },
     imageUrl: { type: String },
     googleId: String,
     facebookId: String,

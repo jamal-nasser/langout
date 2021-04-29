@@ -1,4 +1,41 @@
-<section class="all-posts-page">
+<section>
+  <h1>All Posts</h1>
+  <div class="container">
+    <div class="row">
+      {{#each posts}}
+
+      <div class="all-profiles" class="col-4">
+        <img alt="Responsive image" class="profile-picture" src="{{imageUrl}}" alt="{{title}} - image">
+
+        <div class="card-info">
+          <h3>{{user._id.fullName}} wrote:</h3>
+          <h4>{{title}}</h4>
+          <p>{{description}}</p>
+          
+            <a href="/posts/{{id}}">See details</a>
+            
+            {{#if isOwner}}
+            <a href="/posts/{{id}}/edit">Edit post</a>
+            <form action="/posts/{{id}}/delete" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+            {{/if}}
+        
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+{{!-- <section class="all-posts-page">
 <h1>All Posts</h1>
 
 <div class="container">
@@ -9,8 +46,11 @@
       <img class="img-fluid" alt="Responsive image" class="post-image" src="{{imageUrl}}" alt="{{title}} - image">
 
       <div class="card-info">
-        <h3>{{title}}</h3>
+
+        <h3>{{user._id.fullName}} wrote:</h3>
+        <h4>{{title}}</h4>
         <p>{{description}}</p>
+        <div class="post-button">
         <a href="/posts/{{id}}">See details</a>
         <br>
         {{#if isOwner}}
@@ -19,6 +59,7 @@
           <button type="submit">Delete</button>
         </form>
         {{/if}}
+        </div>
       </div>
 
     </div>
@@ -26,32 +67,9 @@
   </div>
 </div>
 
-</section>
+</section> --}}
 
 
 
 
 
-{{!-- <hr>
-  {{#each posts}}
-   
-    <h3>{{title}}</h5>
-    <p>{{description}}</p>
-
-    <figure>
-      <img src="{{imageUrl}}" alt="post-image">
-    </figure>
-
-
-    <a href="/posts/{{id}}">See details</a>
-    
-        {{#if isOwner}}
-        <a href="/posts/{{id}}/edit">Edit post</a>
-          <form action="/posts/{{id}}/delete" method="POST">
-             <button type="submit">Delete</button>
-          </form>
-          {{/if}}
-        
-  {{/each}}
-
-  <hr /> --}}

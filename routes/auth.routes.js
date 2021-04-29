@@ -13,11 +13,11 @@ router.get('/signup', (req, res) => {
 router.post('/signup',
   fileUploader.single("imageUrl"),
   (req, res, next) => {
-  const { fullName, email, password } = req.body;
+  const { fullName, email, password, learningLanguage, speakingLanguage } = req.body;
 
   // 1. Check username and password are not empty
-  if (!fullName || !email || !password) {
-    res.render('auth/signup', { errorMessage: 'Indicate Full name, email and  password' });
+    if (!fullName || !email || !password || !learningLanguage || !speakingLanguage) {
+    res.render('auth/signup', { errorMessage: 'Indicate Full name, email, password and languages' });
     return;
   }
 
@@ -55,7 +55,7 @@ router.post('/signup',
         .hash(password, saltRounds)
         .then((passwordHash) => {
           return User
-            .create({ fullName, email, passwordHash, imageUrl});
+            .create({ fullName, email, passwordHash, learningLanguage, speakingLanguage ,imageUrl});
         })
             .then((newUser) => {
           req.login(newUser, (err) => {
@@ -109,7 +109,7 @@ router.get(
 router.get(
   "/auth/facebook/callback",
   passport.authenticate("facebook", {
-    successRedirect: "/profile",
+    successRedirect: `/profile`,
     failureRedirect: "/",
     failureFlash: true,
   })

@@ -6,24 +6,26 @@ const googleStrategy = new GoogleStrategy(
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: "/auth/google/callback",
-    profileFields: ['email', 'displayName', 'photos'],
+    // profileFields: ['email', 'displayName', 'photos'],
   }, (accessToken, refreshToken, profile, done) => {
     
     User
       .findOne({ googleId: profile.id })
       .then((foundUser) => {
-        
         if (foundUser) {
           done(null, foundUser);
+
           return;
         }
         return User
           .create({
             fullName: profile.displayName,
-            imageUrl: profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg',
+            imageUrl: "/images/unknown-user.jpeg",
+              //profile.photos ? profile.photos[0].value : '/images/unknown-user.jpeg',
             googleId: profile.id,
           });
       }).then((newUser) => {
+        console.log(newUser);
         done(null, newUser);
       })
       .catch((findErr) => done(findErr))

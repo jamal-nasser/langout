@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
+
+    <div class="col-lg-6 col-md-6 form-container">
+      <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+        <img src="{{userResult.imageUrl}}" alt="user-image" class="profile-picture">
+        <div class="heading mb-4">
+          <h4>Edit my profile</h4>
+        </div>
+        <form action="/users/{{userResult.id}}/edit" method="POST" enctype="multipart/form-data">
+          <div class="form-input">
+            <span><i class="fa fa-user"></i></span>
+            <input type="text" name="fullName" value="{{userResult.fullName}}">
+          </div>
+          <div class="form-input">
+            <span><i class="fa fa-image"></i></span>
+            <input type="file" name="imageUrl">
+            <input type="text" name="existingImage" value="{{userResult.imageUrl}}" hidden>
+          </div>
+          <div class="form-input">
+            <span><i class="fa fa-language"></i></span>
+            <input type="text" placeholder="Language you can teach" name="speakingLanguage" value="{{userResult.speakingLanguage}}"
+              required>
+          </div>
+          <div class="form-input">
+            <span><i class="fa fa-language"></i></span>
+            <input type="text" placeholder="Language you want to learn" name="learningLanguage"
+              value="{{userResult.learningLanguage}}" required>
+          </div>
+          <div class="text-left mb-3">
+            <button type="submit" class="btn btn-social btn-facebook">Edit profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
