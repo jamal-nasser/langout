@@ -6,6 +6,7 @@ const facebookStrategy = new FacebookStrategy(
     clientID: process.env.FACEBOOK_CLIENT_ID,
     clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
     callbackURL: "/auth/facebook/callback",
+    proxy: true,
   }, (accessToken, refreshToken, profile, done) => {
 
     User
