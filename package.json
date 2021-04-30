@@ -7,6 +7,9 @@
     "dev": "DEBUG=starter-code:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.25.1",

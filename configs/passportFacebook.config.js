@@ -6,7 +6,6 @@ const facebookStrategy = new FacebookStrategy(
     clientID: process.env.FACEBOOK_CLIENT_ID,
     clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
     callbackURL: "/auth/facebook/callback",
-    profileFields: ['email', 'displayName', 'photos']
   }, (accessToken, refreshToken, profile, done) => {
 
     User
@@ -20,9 +19,7 @@ const facebookStrategy = new FacebookStrategy(
         return User
           .create({
             fullName: profile.displayName,
-            imageUrl: profile.photos ? profile.photos[0].value : "/images/unknown-user.jpeg",
-            //email: profile.email[0].value,
-              //!== undefined ? profile.emails[0].value : "email@email.com",
+            imageUrl: "/images/unknown-user.jpeg",
             facebookId: profile.id,
           });
       }).then((newUser) => {

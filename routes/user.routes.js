@@ -97,7 +97,7 @@ router.get("/search", (req, res, next) => {
     .catch((filterErr) => next(filterErr));
 });
 
-router.post("/search", (req, res, next) => {
+router.post("/search", (req, res) => {
   const { userId } = req.params;
   User
     .find({})
@@ -105,7 +105,7 @@ router.post("/search", (req, res, next) => {
 
       const filteredUsers = searchedUser.filter((element) => {
 
-        return element.speakingLanguage === req.body.search
+        return element.speakingLanguage === req.body.search;
 
       })
       res.status(200).render('users/all-profiles-search', { filteredUsers })

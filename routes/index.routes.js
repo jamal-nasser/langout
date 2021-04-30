@@ -4,7 +4,7 @@ const router = express.Router();
 const Post = require("../models/Post.model");
 const User = require("../models/User.model");
 
-/* GET home page */
+
 router.get('/', (req, res) => res.render('index'));
 
 router.get("/posts", (req, res, next) => {

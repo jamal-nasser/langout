@@ -10,11 +10,9 @@ const userSchema = new Schema(
       trim: true,
       unique: true,
       lowercase: true,
-      // required: [true, 'Please use a valid email address'],
     },
     passwordHash: {
       type: String,
-      // required: [true, 'Password is required'],
     },
     speakingLanguage: { type: String },
     learningLanguage: { type: String },

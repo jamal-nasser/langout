@@ -246,11 +246,43 @@
 }
 .all-profiles{
   text-align: center;
-  max-width: 300px;
+  max-width: 330px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin: 20px;
+  background-color: #fff;
+}
+.all-profiles-page{
   background-color: #fccc00;
+  min-height: 100vh;
+}
+.all-profiles-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.all-profiles-header h1{
+  color: #fff;
+  padding: 30px;
+}
+.search-wrap{
+ padding-bottom: 30px;
+}
+.all-posts-title{
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+}
+.post-title{
+  color: #da3f34;
+}
+.post-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.post-buttons a{
+  text-decoration: none;
 }
 .text-area{
   resize: none;
@@ -259,11 +291,8 @@
 footer{
   background-color: #383838;
   padding: 1rem 2rem 2rem;
-  /* position: fixed;
   height: 150px;
-  bottom: 0;
-  width: 100%; */
-
+  width: 100%;
 }
 footer img{
   height: 3.5rem;
@@ -285,38 +314,5 @@ ul.social li{
   font-size: 2rem;
 }
 
-.all-posts-page{
-  background-color: #fccc00;
-}
 
-/* .card-info {
-    height: 120px;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #535351;
-    margin-bottom: 30px;
-}
 
-.post-button{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.card-info h3 {
-    font-size: 1.3em;
-    text-align: center;
-    color: white;
-}
-
-.card-info a {
-    text-decoration: none;
-    font-size: 0.9em;
-    font-weight: bold;
-    padding: 5px 10px;
-    background-color: tomato;
-    color: white;
-} */

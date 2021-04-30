@@ -1,25 +1,28 @@
-<section>
-  <h1>All Posts</h1>
+<section class="all-profiles-page">
+  <h1 class="all-posts-title">All Posts</h1>
   <div class="container">
     <div class="row">
+    
       {{#each posts}}
 
       <div class="all-profiles" class="col-4">
         <img alt="Responsive image" class="profile-picture" src="{{imageUrl}}" alt="{{title}} - image">
 
         <div class="card-info">
-          <h3>{{user._id.fullName}} wrote:</h3>
-          <h4>{{title}}</h4>
+          <h3>{{req.user.fullName}} wrote:</h3>
+          <h5 class="post-title">{{title}}</h5>
           <p>{{description}}</p>
           
-            <a href="/posts/{{id}}">See details</a>
-            
-            {{#if isOwner}}
-            <a href="/posts/{{id}}/edit">Edit post</a>
-            <form action="/posts/{{id}}/delete" method="POST">
-              <button type="submit">Delete</button>
-            </form>
-            {{/if}}
+           <div class="post-buttons">
+              <button type="button" class="btn btn-outline-primary"><a href="/posts/{{id}}">See details</a></button>
+              
+              {{#if isOwner}}
+              <button type="button" class="btn btn-outline-success"><a href="/posts/{{id}}/edit">Edit post</a></button>
+              <form action="/posts/{{id}}/delete" method="POST">
+                <button type="submit" type="button" class="btn btn-outline-danger">Delete</button>
+              </form>
+              {{/if}}
+           </div>
         
         </div>
       </div>
@@ -29,45 +32,6 @@
 
 </section>
 
-
-
-
-
-
-
-{{!-- <section class="all-posts-page">
-<h1>All Posts</h1>
-
-<div class="container">
-  <div class="row">
-    {{#each posts}}
-
-    <div class="col-4">
-      <img class="img-fluid" alt="Responsive image" class="post-image" src="{{imageUrl}}" alt="{{title}} - image">
-
-      <div class="card-info">
-
-        <h3>{{user._id.fullName}} wrote:</h3>
-        <h4>{{title}}</h4>
-        <p>{{description}}</p>
-        <div class="post-button">
-        <a href="/posts/{{id}}">See details</a>
-        <br>
-        {{#if isOwner}}
-        <a href="/posts/{{id}}/edit">Edit post</a>
-        <form action="/posts/{{id}}/delete" method="POST">
-          <button type="submit">Delete</button>
-        </form>
-        {{/if}}
-        </div>
-      </div>
-
-    </div>
-    {{/each}}
-  </div>
-</div>
-
-</section> --}}
 
 
 

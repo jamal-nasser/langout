@@ -6,16 +6,17 @@ const saltRounds = 10;
 const passport = require("passport");
 const fileUploader = require("../configs/cloudinary.config");
 
-router.get('/signup', (req, res) => {
+router.get('/signup', (_, res) => {
   res.render('auth/signup');
 });
 
 router.post('/signup',
   fileUploader.single("imageUrl"),
   (req, res, next) => {
-  const { fullName, email, password, learningLanguage, speakingLanguage } = req.body;
+    const { fullName, email, password, learningLanguage, speakingLanguage } = req.body;
+    req.body.speakingLanguage[0].toUpperCase();
+    req.body.learningLanguage[0].toUpperCase();
 
-  // 1. Check username and password are not empty
     if (!fullName || !email || !password || !learningLanguage || !speakingLanguage) {
     res.render('auth/signup', { errorMessage: 'Indicate Full name, email, password and languages' });
     return;
@@ -34,18 +35,17 @@ router.post('/signup',
     return;
   }
     
-    // have a default value for image url
-    let imageUrl = "https://via.placeholder.com/150";
+    let imageUrl = "/images/unknow-user.jpeg";
 
     if (req.file) {
       const { path } = req.file;
       imageUrl = path;
     }
-
+  
   User
     .findOne({ email })
     .then((userResult) => {
-      // 2. Check user does not already exist
+     
       if (userResult) {
         res.render('auth/signup', { errorMessage: 'The email already exists' });
         return;

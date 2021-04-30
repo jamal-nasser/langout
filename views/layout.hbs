@@ -15,31 +15,7 @@
 
 
 <body>
-  <!--<nav class="navbar bg-dark navbar-dark navbar-expand-lg">
-    <div class="container">
-      <div class="heading mb-1 logo">
-        <h4><a href="/">Langout</a></h4>
-      </div>
-      {{!-- <a href="/" class="navbar-brand"><img src="/images/languages-logo.png" alt="logo-image" title="logo-image"></a> --}}
-      <div>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/posts" class="nav-link">Posts</a></li>
-          <li class="nav-item"><a href="/users" class="nav-link">Profiles</a></li>
-          {{#if user}}
-          <li class="nav-item"><a href="/create-post" class="nav-link">Create post</a></li>
-          <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
-          
-          <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
-          {{else}}
-          <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
-          <li class="nav-item"><a href="/signup" class="nav-link">Signup</a></li>
-          {{/if}}
-        </ul>
-      </div>
-    </div>
-  </nav> -->
-
+<div class="content">
   <div class="menu-wrap">
    <input type="checkbox" class="toggler">
       <div class="hamburger">
@@ -70,6 +46,7 @@
   <main>
     {{{body}}}
   </main>
+</div>
   <footer>
     <div class="container bg-dark">
       <div class="row text-light text-center py-4 justify-content-center">
@@ -92,21 +69,3 @@
 </body>
 
 </html>
-
-
-{{!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
-
-  <a class="nav-item nav-link active" href="/">Home</a>
-  <a class="nav-item nav-link active" href="/posts">All posts</a>
-  {{#if user}}
-  <a class="nav-item nav-link active" href="/create-post">Create post</a>
-  <a class="nav-item nav-link" href="/profile">Profile</a>
-  <a class="nav-item nav-link" href="/private-page">Private</a>
-  <a class="nav-item nav-link" href="/logout">Logout</a>
-  {{else}}
-  <a class="nav-item nav-link" href="/login">Login</a>
-  <a class="nav-item nav-link" href="/signup">Signup</a>
-  {{/if}}
-
-</div> --}}

@@ -1,9 +1,14 @@
 <section class="all-profiles-page">
-  <h1>All Profiles</h1>
-  <form  action="/search" method="POST">
-    <input type="text" placeholder="Filter.." name="search">
-    <button type="submit" ><i class="fa fa-search"></i></button>
-  </form>
+  <div class="all-profiles-header">
+    <h1>All Profiles</h1>
+    <div class="search-wrap" class="form-inline">
+        <form action="/search" method="POST" class="form-inline">
+          <input class="form-control mr-sm-2" type="text" placeholder="Filter.." name="search" aria-label="Search" >
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+  </div>
+  
   <div class="container">
     <div class="row">
       {{#each users}}
@@ -13,8 +18,8 @@
 
         <div class="card-info">
           <h3>{{fullName}}</h3>
-          <p>I can teach {{speakingLanguage}} and I want to learn {{learningLanguage}} </p>
-          <a href="/contact/{{id}}">Let's connect</a>
+          <p class="post-title">I can teach {{speakingLanguage}} and I want to learn {{learningLanguage}} </p>
+          <button type="button" class="btn btn-outline-primary"><a href="/contact/{{id}}">Let's connect</a></button>
         </div>
       </div>
       {{/each}}
@@ -26,23 +31,3 @@
 
 
 
-
-{{!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-6 col-md-6 d-none d-md-block "></div>
-    <div class="col-lg-6 col-md-6 form-container">
-      <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
-        <div class="profile">
-          {{#each users}}
-          <img  alt="Responsive image" class="profile-picture" src="{{imageUrl}}" alt="{{fullName}} - image">
-          <div class="profile-card">
-            <h3>{{fullName}}</h3>
-            <p>I can teach {{speakingLanguage}} and I want to learn {{learningLanguage}} </p>
-            <a href="/contact/{{id}}">Let's connect</a>
-          </div>
-          {{/each}}
-        </div>
-      </div>
-    </div>
-  </div>
-</div> --}}

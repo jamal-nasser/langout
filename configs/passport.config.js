@@ -2,7 +2,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require('bcrypt');
 const User = require("../models/User.model");
 
-// Use and define local strategy
+
 const localStategy = new LocalStrategy(
   {
   usernameField: 'email',
@@ -14,7 +14,7 @@ const localStategy = new LocalStrategy(
     User
       .findOne({ email })
       .then((foundUser) => {
-      // When user not found
+      
         if (!foundUser) {
           return done(
             null,

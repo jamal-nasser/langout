@@ -6,7 +6,6 @@ const googleStrategy = new GoogleStrategy(
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: "/auth/google/callback",
-    // profileFields: ['email', 'displayName', 'photos'],
   }, (accessToken, refreshToken, profile, done) => {
     
     User
@@ -21,7 +20,6 @@ const googleStrategy = new GoogleStrategy(
           .create({
             fullName: profile.displayName,
             imageUrl: "/images/unknown-user.jpeg",
-              //profile.photos ? profile.photos[0].value : '/images/unknown-user.jpeg',
             googleId: profile.id,
           });
       }).then((newUser) => {

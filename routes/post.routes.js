@@ -19,7 +19,7 @@ router.post('/create-post',
     return;
   }
     
-    let imageUrl = "https://via.placeholder.com/150";
+    let imageUrl = "/images/unknow-user.jpeg";
 
     if (req.file) {
       const { path } = req.file;
