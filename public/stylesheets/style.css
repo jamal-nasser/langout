@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black;
+  /* background: black; */
 }
 .menu-wrap .hamburger > div {
   position: relative;
@@ -259,10 +259,10 @@
 footer{
   background-color: #383838;
   padding: 1rem 2rem 2rem;
-  position: fixed;
+  /* position: fixed;
   height: 150px;
   bottom: 0;
-  width: 100%;
+  width: 100%; */
 
 }
 footer img{
