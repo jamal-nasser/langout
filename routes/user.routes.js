@@ -105,13 +105,13 @@ router.post("/search", (req, res) => {
 
       const filteredUsers = searchedUser.filter((element) => {
 
-        return element.speakingLanguage === req.body.search;
+        return element.speakingLanguage.toLowerCase() === req.body.search.toLowerCase();
 
       })
       res.status(200).render('users/all-profiles-search', { filteredUsers })
     })
     .catch((searchErr) => {
-      console.error(`Error occured when editing the profile: ${searchErr}`)
+      console.error(`Error occured when searching all profile: ${searchErr}`)
     })
 });
 
