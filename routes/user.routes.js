@@ -106,8 +106,7 @@ router.post("/search", (req, res) => {
     .then((searchedUser) => {
 
       const filteredUsers = searchedUser.filter((element) => {
-        //console.log(element.speakingLanguage.toUpperCase())
-        //console.log(req.body.search.toLowerCase())
+        
         return element.speakingLanguage === req.body.search;
         
       })
