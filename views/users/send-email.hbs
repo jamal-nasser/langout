@@ -1,9 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
 
-<form action="/contact" method="post">
-  <input type="email" name="email" id="" hidden value="{{email}}">
+    <div class="col-lg-6 col-md-6 form-container">
+      <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+        <div class="logo mb-3">
+          <h2>Langout</h2>
+        </div>
+        <div class="heading mb-4">
+          <h4>Send an email so you can both connect</h4>
+        </div>
+        <form action="/contact" method="post">
+          <div class="form-input">
+            <span><i class="fa fa-envelope"></i></span>
+          <input type="email" name="email" value="{{email}}" hidden>
+          </div>
+          <div class="form-input">
+            <span><i class="fa fa-comment"></i></span>
+            <input type="text" name="subject" placeholder="Subject">
+          </div>
+          <div class="form-input">
+            <span><i class="fa"></i></span>
+            <textarea type="text" name="message" placeholder="what's on your mind?" cols="40" rows="10"></textarea>
+          </div>
+        
+          <div class="text-left mb-3">
+            <button type="submit" class="btn">Send</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{!-- <form action="/contact" method="post">
+  <input type="email" name="email" id=""  value="{{email}}" hidden>
   <label for="">Subject</label>
   <input type="text" name="subject" id="">
   <label for="">Message</label>
   <textarea type="text" name="message" id=""></textarea>
   <button type="submit">Submit</button>
-</form>
+</form> --}}

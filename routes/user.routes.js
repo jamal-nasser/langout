@@ -60,7 +60,6 @@ router.get('/contact/:userId', (req, res, next) => {
 
 router.post('/contact', (req, res, next) => {
   const { email, subject, message } = req.body;
-  console.log(email)
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
