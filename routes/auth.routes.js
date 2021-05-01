@@ -14,8 +14,8 @@ router.post('/signup',
   fileUploader.single("imageUrl"),
   (req, res, next) => {
     const { fullName, email, password, learningLanguage, speakingLanguage } = req.body;
-    req.body.speakingLanguage[0].toUpperCase();
-    req.body.learningLanguage[0].toUpperCase();
+    // req.body.speakingLanguage[0].toUpperCase();
+    // req.body.learningLanguage[0].toUpperCase();
 
     if (!fullName || !email || !password || !learningLanguage || !speakingLanguage) {
     res.render('auth/signup', { errorMessage: 'Indicate Full name, email, password and languages' });

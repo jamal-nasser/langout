@@ -140,6 +140,21 @@
     background-size: cover;
     height: 100vh;
 }
+.create-post-container{
+  background: url('/images/create.jpeg') center no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.edit-profile-container{
+  background: url('/images/light1.jpeg') center no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.profile-page-image{
+  background: url('/images/light2.jpeg') center no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
 
 .form-container{
     background-color: #fccc00;
@@ -246,7 +261,7 @@
 }
 .all-profiles{
   text-align: center;
-  max-width: 330px;
+  width: 330px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin: 20px;

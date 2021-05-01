@@ -40,7 +40,7 @@ router.post('/users/:userId/edit',
 
     User
       .findByIdAndUpdate(userId, { fullName, imageUrl, learningLanguage, speakingLanguage })
-      .then((updatedUser) => {
+      .then(() => {
         res.redirect(`/profile`);
       })
       .catch((updateErr) => {
@@ -51,10 +51,13 @@ router.post('/users/:userId/edit',
 
 router.get('/contact/:userId', (req, res, next) => {
   const { user } = req;
-  User.findById(req.params.userId).then((foundUser) => {
+  User
+    .findById(req.params.userId)
+    .then((foundUser) => {
     res.status(200).render('users/send-email', { email: foundUser.email, user });
 
-  }).catch(err => next(err))
+    })
+    .catch(err => next(err))
 
 });
 
@@ -103,14 +106,15 @@ router.post("/search", (req, res) => {
     .then((searchedUser) => {
 
       const filteredUsers = searchedUser.filter((element) => {
-
-        return element.speakingLanguage.toLowerCase() === req.body.search.toLowerCase();
-
+        //console.log(element.speakingLanguage.toUpperCase())
+        //console.log(req.body.search.toLowerCase())
+        return element.speakingLanguage === req.body.search;
+        
       })
       res.status(200).render('users/all-profiles-search', { filteredUsers })
     })
     .catch((searchErr) => {
-      console.error(`Error occured when searching all profile: ${searchErr}`)
+      console.error(`Error occured when searching all profiles: ${searchErr}`)
     })
 });
 
