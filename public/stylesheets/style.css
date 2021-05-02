@@ -286,6 +286,7 @@
 }
 .text-area{
   resize: none;
+  max-width: 100%;
 }
 
 footer{
