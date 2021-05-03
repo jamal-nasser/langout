@@ -288,6 +288,26 @@
   resize: none;
   max-width: 100%;
 }
+.no-matches-title{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+.no-matches-title > button{
+  width: 50%;
+}
+.no-matches-title > button > a:hover{
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
 
 footer{
   background-color: #383838;

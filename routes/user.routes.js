@@ -19,7 +19,7 @@ router.get('/users/:userId/edit', (req, res) => {
       res.status(200).render('users/profile-edit', { userResult, user: req.user });
     })
     .catch((findErr) => {
-      console.error(`Error occured when retrieving the profile`)
+      console.error(`Error occured when retrieving the profile: ${findErr}`)
     })
 });
 
@@ -100,17 +100,19 @@ router.get("/search", (req, res, next) => {
 });
 
 router.post("/search", (req, res) => {
+  const { user } = req;
   const { userId } = req.params;
+
   User
     .find({})
     .then((searchedUser) => {
-
+  
       const filteredUsers = searchedUser.filter((element) => {
-        
-        return element.speakingLanguage === req.body.search;
+
+      return element.speakingLanguage.toLowerCase() === req.body.search.toLowerCase();
         
       })
-      res.status(200).render('users/all-profiles-search', { filteredUsers })
+      res.status(200).render('users/all-profiles-search', { filteredUsers, user })
     })
     .catch((searchErr) => {
       console.error(`Error occured when searching all profiles: ${searchErr}`)

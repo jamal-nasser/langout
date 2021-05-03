@@ -1,8 +1,14 @@
 <section class="all-profiles-page">
-  <div class="all-profiles-header">
-    <h1>All profiles search</h1>
-  </div>
-
+ {{#if filteredUsers}}
+<div class="all-profiles-header">
+  <h1>All profiles search</h1>
+</div>
+ {{else}}
+<div class="no-matches-title">
+  <h1>No matches, try another language!</h1>
+  <button class="btn btn-outline-primary"><a href="/users">Try again</a></button>
+</div>
+ {{/if}}
   <div class="container">
     <div class="row">
       {{#each filteredUsers}}
